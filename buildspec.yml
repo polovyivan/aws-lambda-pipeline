@@ -13,7 +13,7 @@ phases:
     commands:
       - export BUCKET=codepipeline-us-east-1-362366422495
       - mvn clean package
-      - aws cloudformation package --template-file template.yaml --s3-bucket $BUCKET --output-template-file outputtemplate.yml
+      - aws cloudformation package --template-file template.yaml --s3-bucket codepipeline-us-east-1-362366422495 --output-template-file outputtemplate.yml
 artifacts:
   type: jar
   files:
