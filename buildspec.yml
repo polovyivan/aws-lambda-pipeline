@@ -11,6 +11,7 @@ phases:
         java: $JAVA_VERSION
   build:
     commands:
+      - echo $BUCKET
       - mvn clean package
       - aws cloudformation package --template-file template.yaml --s3-bucket $BUCKET --output-template-file outputtemplate.yml
 artifacts:
