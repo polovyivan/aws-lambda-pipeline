@@ -3,6 +3,7 @@ version: 0.2
 env:
   variables:
 #    BUCKET: codepipeline-us-east-1-362366422495
+
     JAVA_VERSION: corretto11
 
 phases:
@@ -13,9 +14,9 @@ phases:
     commands:
 #      - export BUCKET=codepipeline-us-east-1-362366422495
       - mvn clean package
-      - aws cloudformation package --template-file template.yaml --s3-bucket bucket --output-template-file outputtemplate.yml
+      - aws cloudformation package --template-file template.yaml --s3-bucket codepipeline-us-east-1-362366422495 --output-template-file packaged.yaml
 artifacts:
   type: jar
   files:
     - template.yaml
-    - outputtemplate.yml
+    - packaged.yaml
