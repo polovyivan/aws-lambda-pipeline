@@ -1,0 +1,20 @@
+version: 0.2
+
+env:
+  variables:
+    BUCKET: bucket-name
+    JAVA_VERSION: corretto11
+
+phases:
+  install:
+    runtime-versions:
+        java: $JAVA_VERSION
+  build:
+    commands:
+      - mvn clean package
+      - aws cloudformation package --template-file template.yaml --s3-bucket $BUCKET --output-template-file outputtemplate.yml
+artifacts:
+  type: jar
+  files:
+    - template.yaml
+    - outputtemplate.yml

@@ -1,0 +1,28 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Example of processing messages on an SQS queue with Lambda
+Resources:
+  LambdaForSQS:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: aws-lambda-pipeline
+      Handler: com.ivan.polovyi.examples.SQSHandler::handleRequest
+      Runtime: java11
+#      CodeUri: ./target/aws-lambda-pipeline-1.0.jar
+      CodeUri: /home/ivanpolovyi/projects/private/my_tutorials/aws_lambdas/aws-lambda-pipeline
+      Description: 'Lambda function responsible for processing messages in SQS'
+      MemorySize: 512
+      Timeout: 15
+      Role: arn:aws:iam::708995052028:role/service-role/LambdaRole
+      Events:
+        SQS1:
+          Type: SQS
+          Properties:
+            Queue: arn:aws:sqs:us-east-1:708995052028:SimpleSQSForTest
+            BatchSize: 10
+      Environment:
+        Variables:
+          AWS_ACCESS:
+          AWS_SECRET:
+      Tags:
+        Project-name: my-tutorials
