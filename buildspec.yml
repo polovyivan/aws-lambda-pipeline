@@ -2,7 +2,7 @@ version: 0.2
 
 env:
   variables:
-    BUCKET: bucket-name
+    BUCKET: codepipeline-us-east-1-362366422495
     JAVA_VERSION: corretto11
 
 phases:
