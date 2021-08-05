@@ -20,9 +20,9 @@ Resources:
           Properties:
             Queue: arn:aws:sqs:us-east-1:708995052028:SimpleSQSForTest
             BatchSize: 10
-      Environment:
-        Variables:
-          AWS_ACCESS:
-          AWS_SECRET:
+#      Environment:
+#        Variables:
+#          AWS_ACCESS:
+#          AWS_SECRET:
       Tags:
         Project-name: my-tutorials
