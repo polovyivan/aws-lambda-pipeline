@@ -2,10 +2,10 @@ AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
 Description: Example of processing messages on an SQS queue with Lambda
 Resources:
-  LambdaForSQS:
+  LambdaForSQSCF:
     Type: AWS::Serverless::Function
     Properties:
-      FunctionName: aws-lambda-pipeline
+      FunctionName: aws-lambda-pipeline-cf
       Handler: com.ivan.polovyi.examples.SQSHandler::handleRequest
       Runtime: java11
       CodeUri: ./target/aws-lambda-pipeline-1.0.jar
