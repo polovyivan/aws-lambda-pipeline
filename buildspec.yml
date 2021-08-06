@@ -2,8 +2,7 @@ version: 0.2
 
 env:
   variables:
-#    BUCKET: codepipeline-us-east-1-362366422495
-
+    BUCKET: pipelines-for-lambda
     JAVA_VERSION: corretto11
 
 phases:
@@ -12,11 +11,10 @@ phases:
         java: $JAVA_VERSION
   build:
     commands:
-#      - export BUCKET=codepipeline-us-east-1-362366422495
       - mvn clean package
-      - aws cloudformation package --template-file template.yaml --s3-bucket codepipeline-us-east-1-362366422495 --output-template-file packaged.yaml
+      - aws cloudformation package --template-file template.yaml --s3-bucket $BUCKET --output-template-file templet-out.yaml
 artifacts:
   type: jar
   files:
     - template.yaml
-    - packaged.yaml
+    - templet-out.yaml
