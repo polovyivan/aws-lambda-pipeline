@@ -12,9 +12,9 @@ phases:
   build:
     commands:
       - mvn clean package
-      - aws cloudformation package --template-file template.yaml --s3-bucket $BUCKET --output-template-file templete-out.yaml
+      - aws cloudformation package --template-file template.yaml --s3-bucket $BUCKET --output-template-file template-out.yaml
 artifacts:
   type: jar
   files:
     - template.yaml
-    - templete-out.yaml
+    - template-out.yaml
