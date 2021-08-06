@@ -12,9 +12,9 @@ phases:
   build:
     commands:
       - mvn clean package
-      - aws sam package --template-file template.yaml --s3-bucket $BUCKET --output-template-file templet-out.yaml
+      - aws sam package --template-file template.yaml --s3-bucket $BUCKET --output-template-file templete-out.yaml
 artifacts:
   type: jar
   files:
     - template.yaml
-    - templet-out.yaml
+    - templete-out.yaml
