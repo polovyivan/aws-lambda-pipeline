@@ -14,7 +14,7 @@ public class SQSHandler implements RequestHandler<SQSEvent, Void> {
         sqsEvent.getRecords().forEach(message -> {
             context.getLogger().log("Message id " + message.getMessageId() + "\n");
             context.getLogger().log("Message body " + message.getBody()+ "\n");
-            context.getLogger().log("Pipeline!!! ");
+            context.getLogger().log("Pipeline after commit!!! ");
 
         });
         return null;
