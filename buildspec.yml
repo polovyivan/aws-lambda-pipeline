@@ -15,7 +15,5 @@ phases:
       - mvn clean package
       - aws cloudformation package --template-file template.yaml --s3-bucket $BUCKET --output-template-file $TEMPLATE_OUT_FILE_NAME
 artifacts:
-  type: jar
   files:
-    - template.yaml
     - $TEMPLATE_OUT_FILE_NAME
