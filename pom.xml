@@ -5,7 +5,7 @@
     <artifactId>aws-lambda-pipeline</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging>
-    <name>A sample AWS Lambda function for SQS</name>
+    <name>A simple AWS Lambda function for SQS</name>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>11</java.version>
